@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import morgan from 'morgan';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
+import UserRoute from './routes/user.route';
 
 dotenv.config();
 
@@ -16,5 +17,6 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
+app.use("/user", UserRoute);
 
 export default app;
